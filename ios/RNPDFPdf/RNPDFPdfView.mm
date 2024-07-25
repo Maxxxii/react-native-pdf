@@ -466,7 +466,7 @@ using namespace facebook::react;
         if (_pdfDocument && ([changedProps containsObject:@"path"] || [changedProps containsObject:@"singlePage"])) {
             if (_singlePage) {
                 _pdfView.displayMode = kPDFDisplaySinglePage;
-                _pdfView.userInteractionEnabled = NO;
+                _pdfView.userInteractionEnabled = YES;
             } else {
                 _pdfView.displayMode = kPDFDisplaySinglePageContinuous;
                 _pdfView.userInteractionEnabled = YES;
