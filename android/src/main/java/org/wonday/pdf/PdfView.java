@@ -321,13 +321,13 @@ public class PdfView extends PDFView implements OnPageChangeListener,OnLoadCompl
                 .autoSpacing(this.autoSpacing)
                 .pageFling(this.pageFling)
                 .enableSwipe(!this.singlePage && this.scrollEnabled)
-                .enableDoubletap(!this.singlePage && this.enableDoubleTapZoom)
+                .enableDoubletap(this.enableDoubleTapZoom)
                 .enableAnnotationRendering(this.enableAnnotationRendering)
                 .linkHandler(this);
 
             if (this.singlePage) {
                 configurator.pages(this.page-1);
-                setTouchesEnabled(false);
+                configurator.onTap(this);
             } else {
                 configurator.onTap(this);
             }
