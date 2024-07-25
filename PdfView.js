@@ -271,14 +271,6 @@ export default class PdfView extends Component {
             />
         )
 
-        if (this.props.singlePage) {
-            return (
-                <View style={{flexDirection: this.props.horizontal ? 'row' : 'column'}} >
-                    {pageView}
-                </View>
-            )
-        }
-
         return (
             <DoubleTapView style={{flexDirection: this.props.horizontal ? 'row' : 'column'}}
                            onSingleTap={(x, y) => {
@@ -385,16 +377,6 @@ export default class PdfView extends Component {
 
 
     render() {
-        if (this.props.singlePage) {
-            return (
-                <View
-                    style={styles.container}
-                    onLayout={this._onLayout}
-                >
-                    {this.state.pdfLoaded && this._renderList()}
-                </View>
-            )
-        }
 
         return (
             <PinchZoomView
